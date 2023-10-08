@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="/csslogin">
+</head>
+<body>
+    <div id="loginForm">
+        <div class="container">
+            <img src="/photo" alt="Logo" class="logo">
+            <form id="myForm">
+                <div class="input-group">
+                    <div class="input-field">
+                        <input type="text" id="nameField" name="name" class="input-element" placeholder="Enter your name">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <input type="password" id="passwordField" name="password" class="input-element" placeholder="Enter your password">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("myForm").addEventListener("submit", auth);
+
+function auth(event) {
+     event.preventDefault();
+
+     var username = document.getElementById("nameField").value;
+     var password = document.getElementById("passwordField").value;
+     console.log(username);
+
+     if (username === "maker" && password === "123") {
+          const currentUrl = window.location.href;
+          console.log(currentUrl+"login");
+          window.location.replace(currentUrl+"login");
+     }  
+     else if (username === "" && password === "") {
+          alert("Please enter information");
+     } 
+     else {
+         alert("Please enter valid information");
+         return;
+     }
+}
+</script>

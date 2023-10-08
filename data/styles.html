@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="/style">
+    <title>Button Controller</title>
+</head>
+<body>
+  <div class="container">
+  <div class="manette"><h1>Mannette MakerLabs </h1></div>
+    <div class="controller">
+        <div class="button up" onclick="send('f')"><br>↑</div>
+        <div class="button left"  onclick="send('l')"><br>←</div>
+        <div class="button right" onclick="send('r')"><br>→</div>
+        <div class="button down" onclick="send('b')"><br>↓</div>
+    </div>
+    <div class="controller1">
+      <div class="button up" onclick="vitesse('plus')"><br>speed up</div>
+      <div id="vitesse">vitesse</div>
+      <div class="button down" onclick="vitesse('-')"><br>speed down</div>
+  </div>
+  </div>
+  </body>
+</html>
+<script>
+function send(word) 
+{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("state").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/login/moteurstate?state="+word, true);
+  xhttp.send();
+}
+function vitesse(v) 
+{
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("vitesse").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/login/moteur?vitesse="+v, true);
+  xhttp.send();
+}
+</script>
+  

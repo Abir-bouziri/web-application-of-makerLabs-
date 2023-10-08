@@ -1,0 +1,148 @@
+body {
+    position: relative;
+    height: 150vh;
+    margin: 0;
+    background-color: #0096FF;
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.manette {
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: 'Pixelify Sans', cursive;
+    width: 500px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 2; /* Ensure it's above the controllers */
+}
+
+.controller, .controller1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    text-align: justify;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: 'Pixelify Sans', cursive;
+    align-items: center;
+    z-index: 1; /* Ensure controllers are below .manette */
+}
+
+.button {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.center-button {
+    width: 40px;
+    height: 40px;
+    background-color: #0096FF;
+    border-radius: 50%;
+    grid-column: 2;
+    grid-row: 2;
+}
+#vitesse{
+    position: relative;
+    top: 70%;
+    left: 120%;
+}
+
+/* Rest of your CSS styles */
+
+@media (max-width: 600px) {
+    body {
+        background-color: #0096FF;
+        transform: rotate(90deg);
+        height: 100vh;
+        
+    }
+
+    .controller, .controller1 {
+        padding: px;
+        width: 160px;
+        height: 160px;
+    }
+    .button {
+        width: 60px;
+        height: 60px;
+    }
+    .manette {    background-color: #fff;
+        color: black;
+        /* text-align: center; */
+        /* font-family: 'IBM Plex Sans Arabic', sans-serif; */
+        /* font-family: 'Pixelify Sans', cursive; */
+        width: 500px;
+        /* height: 100px; */
+        /* border-radius: 10px; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        position: absolute;
+        top: 21%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;}
+    /* Rest of your responsive styles */
+    .controller, .controller1 {
+            /* width: 200px; */
+    /* height: 200px; */
+    border-radius: 10px;
+    margin-left: -1%;
+    /* margin-right: 25%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-gap: 5px; */
+    text-align: justify;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: 'Pixelify Sans', cursive;
+    align-items: center;
+    z-index: 1;
+    }
+
+}
