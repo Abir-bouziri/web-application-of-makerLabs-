@@ -2,10 +2,8 @@
 #include <ESP8266WebServer.h>
 //bibliothéque SPIFFS
 #include "FS.h"
-//const char* ssid = "LAPTOP-6BQ6PP1A 4648"; //ssid of your wifi
-//const char* password = "29[929Ur";
-const char* ssid = "Redmi 10C"; //ssid of your wifi
-const char* password = "abirbouziri10";
+const char* ssid = "**************"; //ssid of your wifi
+const char* password = "*****************";
 //les moteurs pins 
 int ENA = D7;
 int in1 = D1;
